@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class setFPS : MonoBehaviour
+public class SetFPS : MonoBehaviour
 {
     // 起動時にfpsを固定する
     [SerializeField] private int targetFPS = 0;
