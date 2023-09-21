@@ -1,21 +1,19 @@
 using System;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
 
 namespace UnityStandardAssets.Vehicles.Aeroplane
 {
     [RequireComponent(typeof(AeroplaneController))]
-    public class AeroplaneUserControl4Axis : MonoBehaviour
+    public class AeroplaneUserMotionControl : MonoBehaviour
     {
+        [SerializeField] MotionControl motionControl;
+
         // these max angles are only used on mobile, due to the way pitch and roll input are handled
         public float maxRollAngle = 80;
         public float maxPitchAngle = 80;
 
         // reference to the aeroplane that we're controlling
         private AeroplaneController m_Aeroplane;
-        private float m_Throttle;
-        private bool m_AirBrakes;
-        private float m_Yaw;
 
 
         private void Awake()
@@ -28,14 +26,15 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
         private void FixedUpdate()
         {
             // Read input for the pitch, yaw, roll and throttle of the aeroplane.
-            float roll = CrossPlatformInputManager.GetAxis("Mouse X");
-            float pitch = CrossPlatformInputManager.GetAxis("Mouse Y");
-            m_AirBrakes = CrossPlatformInputManager.GetButton("Fire1");
-            m_Yaw = CrossPlatformInputManager.GetAxis("Horizontal");
-            m_Throttle = CrossPlatformInputManager.GetAxis("Vertical");
-            AdjustInputForMobileControls(ref roll, ref pitch, ref m_Throttle);
+            float roll = motionControl.nomalizedRollAngle;
+            float pitch = motionControl.nomalizedPitchAngle;
+            bool airBrakes = motionControl.airBrakes;
+            // auto throttle up, or down if braking.
+            float throttle = airBrakes ? -1 : 1;
+            AdjustInputForMobileControls(ref roll, ref pitch, ref throttle);
+
             // Pass the input to the aeroplane
-            m_Aeroplane.Move(roll, pitch, m_Yaw, m_Throttle, m_AirBrakes);
+            m_Aeroplane.Move(roll, pitch, 0, throttle, airBrakes);
         }
 
 
@@ -53,6 +52,10 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
             float intendedPitchAngle = pitch * maxPitchAngle * Mathf.Deg2Rad;
             roll = Mathf.Clamp((intendedRollAngle - m_Aeroplane.RollAngle), -1, 1);
             pitch = Mathf.Clamp((intendedPitchAngle - m_Aeroplane.PitchAngle), -1, 1);
+
+            // similarly, the throttle axis input is considered to be the desired absolute value, not a relative change to current throttle.
+            float intendedThrottle = throttle * 0.5f + 0.5f;
+            throttle = Mathf.Clamp(intendedThrottle - m_Aeroplane.Throttle, -1, 1);
         }
     }
 }

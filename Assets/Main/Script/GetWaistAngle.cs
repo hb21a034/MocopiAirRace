@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class GetShoulderAngle : GetAngle
+public class GetWaistAngle : GetAngle
 {
     // Start is called before the first frame update
     [SerializeField] GameObject origin;
@@ -28,7 +28,6 @@ public class GetShoulderAngle : GetAngle
     public void InitAngle()
     {
         offset = new GameObject("offset");
-        offset.transform.parent = offsetParent.transform;
         offset.transform.position = target.transform.position;
         setAxis();
     }
@@ -36,8 +35,9 @@ public class GetShoulderAngle : GetAngle
     // Update is called once per frame
     void Update()
     {
+        offset.transform.position = offsetParent.transform.position;
         // 空間上のベクトル
-        Vector3 from = offset.transform.position - origin.transform.position;
+        Vector3 from = Vector3.up;
         Vector3 to = target.transform.position - origin.transform.position;
 
         // 平面に投影されたベクトルを求める
@@ -62,12 +62,12 @@ public class GetShoulderAngle : GetAngle
         // Draws a blue line from this transform to the target
         Gizmos.DrawLine(origin.transform.position, target.transform.position);
         Gizmos.color = Color.gray;
-        if (offset != null) { Gizmos.DrawLine(origin.transform.position, offset.transform.position); }
+        if (offset != null) { Gizmos.DrawLine(origin.transform.position, origin.transform.position + Vector3.up * 0.5f); }
 
         // 軸の描画
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(origin.transform.position, planeNormal * 0.1f);
-        Gizmos.DrawRay(origin.transform.position, -planeNormal * 0.1f);
+        Gizmos.DrawRay(origin.transform.position, planeNormal * 0.2f);
+        Gizmos.DrawRay(origin.transform.position, -planeNormal * 0.2f);
     }
 
     void setAxis()

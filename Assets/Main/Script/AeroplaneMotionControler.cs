@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AeroPlaneMotionControl : MonoBehaviour
+public class AeroplaneMotionControl : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] MotionControl motionControl;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
