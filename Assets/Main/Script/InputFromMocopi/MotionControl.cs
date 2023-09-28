@@ -10,6 +10,8 @@ public class MotionControl : MonoBehaviour
     [SerializeField] GetAngle yaw;
     [SerializeField] GetAngle accel;
 
+    public bool init = false;
+
     // Start is called before the first frame update
 
     [Header("Roll")]
@@ -73,6 +75,22 @@ public class MotionControl : MonoBehaviour
             airBrakes = false;
         }
 
+        if (init)
+        {
+            init = false;
+            StartCoroutine(WaitInit());
+        }
+
+    }
+    // 2秒後に初期化
+    IEnumerator WaitInit()
+    {
+        yield return new WaitForSeconds(2);
+        roll.InitAngle();
+        pitch.InitAngle();
+        yaw.InitAngle();
+        accel.InitAngle();
+        Debug.Log("init");
     }
 
     public float SmoothingMotionData(float rawData, float smoothedValue, float smoothingFactor)

@@ -147,7 +147,7 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
             // Forward speed is the speed in the planes's forward direction (not the same as its velocity, eg if falling in a stall)
             var localVelocity = transform.InverseTransformDirection(m_Rigidbody.velocity);
             ForwardSpeed = Mathf.Max(0, localVelocity.z);
-            Debug.Log(ForwardSpeed);
+            // Debug.Log(ForwardSpeed);
         }
 
 

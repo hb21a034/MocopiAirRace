@@ -54,10 +54,29 @@ MonoBehaviour:
   pitch: {fileID: 7070908766381174691}
   yaw: {fileID: 8241083989937475966}
   accel: {fileID: 3029844532320898031}
+  init: 0
+  maxRollAngle: 80
+  minRollAngle: -80
+  rollSmoothingFactor: 0.1
   rollAngle: 0
+  nomalizedRollAngle: 0
+  maxPitchAngle: 80
+  minPitchAngle: -80
+  pitchSmoothingFactor: 0.1
   pitchAngle: 0
+  nomalizedPitchAngle: 0
+  maxYawAngle: 80
+  minYawAngle: -80
+  yawSmoothingFactor: 0.1
   yawAngle: 0
+  nomalizedYawAngle: 0
+  maxAccelAngle: 80
+  minAccelAngle: -80
+  accelSmoothingFactor: 0.1
   accelAmount: 0
+  nomalizedAccelAmount: 0
+  airBreakAngle: -50
+  airBrakes: 0
 --- !u!1 &213125780092945060
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,9 +312,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   origin: {fileID: 8306379360818070218}
   target: {fileID: 8713326459082076794}
-  offsetParent: {fileID: 6733945125466599734}
+  offsetParent: {fileID: 7028410786616320769}
   useAxis: 2
-  angle: 0
   init: 0
   debug: 0
 --- !u!1 &2364959568636109195
@@ -609,7 +627,6 @@ MonoBehaviour:
   target: {fileID: 6733945125466599734}
   offsetParent: {fileID: 8503718482538856593}
   useAxis: 0
-  angle: 0
   init: 0
   debug: 0
 --- !u!1 &3163712735891568280
@@ -842,7 +859,6 @@ MonoBehaviour:
   target: {fileID: 8713326459082076794}
   offsetParent: {fileID: 6733945125466599734}
   useAxis: 1
-  angle: 0
   init: 0
   debug: 0
 --- !u!1 &3635534145722459220
@@ -986,7 +1002,6 @@ MonoBehaviour:
   refarance: {fileID: 9217110760311611957}
   target: {fileID: 4424178063465813388}
   useAxis: 1
-  angle: 0
 --- !u!1 &4096275091979286525
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,7 +1083,6 @@ MonoBehaviour:
   getAngle1: {fileID: 4460489955396818341}
   getAngle2: {fileID: 3737683270579241428}
   invart: 0
-  averageAngle: 0
   debug: 0
 --- !u!1 &4424178063465813388
 GameObject:
@@ -1151,7 +1165,6 @@ MonoBehaviour:
   getAngle1: {fileID: 4378758276825804541}
   getAngle2: {fileID: 3810765951201502170}
   invart: 0
-  averageAngle: 0
   debug: 0
 --- !u!1 &4539827449446026185
 GameObject:
@@ -1298,7 +1311,6 @@ MonoBehaviour:
   getAngle1: {fileID: 7171535204263385984}
   getAngle2: {fileID: 4451377129489060192}
   invart: 1
-  averageAngle: 0
   debug: 0
 --- !u!1 &5996565472693507034
 GameObject:
@@ -1395,7 +1407,6 @@ MonoBehaviour:
   refarance: {fileID: 9217110760311611957}
   target: {fileID: 2998956299457823340}
   useAxis: 1
-  angle: 0
 --- !u!1 &6733945125466599734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1672,7 +1683,6 @@ MonoBehaviour:
   target: {fileID: 2939879844062024647}
   offsetParent: {fileID: 6733945125466599734}
   useAxis: 1
-  angle: 0
   init: 0
   debug: 0
 --- !u!1 &8306379360818070218
@@ -1881,9 +1891,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   origin: {fileID: 5325701367986784359}
   target: {fileID: 2939879844062024647}
-  offsetParent: {fileID: 6733945125466599734}
+  offsetParent: {fileID: 7028410786616320769}
   useAxis: 2
-  angle: 0
   init: 0
   debug: 0
 --- !u!1 &8880499089994815287

@@ -31,4 +31,10 @@ public class AverageTowTwistAngles : GetAngle
 
         if (debug) { Debug.Log(Angle); }
     }
+
+    public override void InitAngle()
+    {
+        getAngle1.InitAngle();
+        getAngle2.InitAngle();
+    }
 }

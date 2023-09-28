@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 625707215}
   - component: {fileID: 625707214}
   - component: {fileID: 625707213}
+  - component: {fileID: 625707217}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -229,6 +230,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &625707217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625707212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb93c80c9553a494a83a5355b5ba50f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ipAddress: 192.168.1.14
 --- !u!1 &697406325
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,6 +571,12 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
+--- !u!1 &920581064 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7028410786616320769, guid: 1eed01270556ecd4f91da2d7072de405,
+    type: 3}
+  m_PrefabInstance: {fileID: 1314919074824224898}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1289490727
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,7 +948,6 @@ MonoBehaviour:
   target: {fileID: 1669442255}
   offsetParent: {fileID: 2069589257}
   useAxis: 2
-  angle: 0
   init: 0
   debug: 0
 --- !u!1001 &1314919074824224898
@@ -944,15 +963,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: MotionControler
       objectReference: {fileID: 0}
+    - target: {fileID: 2690267972146002710, guid: 1eed01270556ecd4f91da2d7072de405,
+        type: 3}
+      propertyPath: airBrakes
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3029844532320898031, guid: 1eed01270556ecd4f91da2d7072de405,
         type: 3}
       propertyPath: invart
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3737683270579241428, guid: 1eed01270556ecd4f91da2d7072de405,
+        type: 3}
+      propertyPath: root
+      value: 
+      objectReference: {fileID: 920581064}
+    - target: {fileID: 3737683270579241428, guid: 1eed01270556ecd4f91da2d7072de405,
+        type: 3}
+      propertyPath: offsetParent
+      value: 
+      objectReference: {fileID: 920581064}
+    - target: {fileID: 3737683270579241428, guid: 1eed01270556ecd4f91da2d7072de405,
+        type: 3}
+      propertyPath: lockTargetHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460489955396818341, guid: 1eed01270556ecd4f91da2d7072de405,
+        type: 3}
+      propertyPath: root
+      value: 
+      objectReference: {fileID: 920581064}
+    - target: {fileID: 4460489955396818341, guid: 1eed01270556ecd4f91da2d7072de405,
+        type: 3}
+      propertyPath: offsetParent
+      value: 
+      objectReference: {fileID: 920581064}
+    - target: {fileID: 4460489955396818341, guid: 1eed01270556ecd4f91da2d7072de405,
+        type: 3}
+      propertyPath: lockTargetHeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8241083989937475966, guid: 1eed01270556ecd4f91da2d7072de405,
         type: 3}
       propertyPath: debug
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8717072282091683843, guid: 1eed01270556ecd4f91da2d7072de405,
         type: 3}

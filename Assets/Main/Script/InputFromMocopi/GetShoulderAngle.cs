@@ -23,9 +23,10 @@ public class GetShoulderAngle : GetAngle
     {
         InitAngle();
         setAxis();
+
     }
 
-    public void InitAngle()
+    public override void InitAngle()
     {
         offset = new GameObject("offset");
         offset.transform.parent = offsetParent.transform;
@@ -53,7 +54,6 @@ public class GetShoulderAngle : GetAngle
             InitAngle();
             init = false;
         }
-
     }
 
     void OnDrawGizmos()

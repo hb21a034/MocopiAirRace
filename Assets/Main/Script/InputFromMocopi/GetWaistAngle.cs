@@ -25,7 +25,7 @@ public class GetWaistAngle : GetAngle
         setAxis();
     }
 
-    public void InitAngle()
+    public override void InitAngle()
     {
         offset = new GameObject("offset");
         offset.transform.position = target.transform.position;

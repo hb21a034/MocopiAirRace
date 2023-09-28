@@ -6,6 +6,7 @@ using UnityEngine;
 public class CheckpointManager : MonoBehaviour
 {
     [SerializeField] GameObject[] checkpointsObject;
+    [SerializeField] TargetIndicator targetIndicator;
 
     void Awake()
     {
@@ -13,6 +14,12 @@ public class CheckpointManager : MonoBehaviour
         {
             checkpointsObject[i].GetComponent<SetCheckpoint>().Number = i + 1;
         }
+    }
+
+    void Update()
+    {
+        // 次のチェックポイントをターゲットにする
+        targetIndicator.target = checkpointsObject[SetCheckpoint.PassedCheckpoint].transform;
     }
 
     private void OnDrawGizmos()
