@@ -15,7 +15,7 @@ public class MotionControl : MonoBehaviour
     [Header("Roll")]
     [SerializeField, Range(0f, 90f)] float maxRollAngle = 80f;
     [SerializeField, Range(0f, -90f)] float minRollAngle = -80f;
-    [SerializeField, Range(0f, 0.3f)] float rollSmoothingFactor = 0.1f;
+    [SerializeField, Range(0f, 1f)] float rollSmoothingFactor = 0.1f;
     public float rollAngle = 0f;
     public float nomalizedRollAngle = 0f;
 

@@ -30,7 +30,9 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
             float pitch = motionControl.nomalizedPitchAngle;
             bool airBrakes = motionControl.airBrakes;
             // auto throttle up, or down if braking.
-            float throttle = airBrakes ? -1 : 1;
+            // float throttle = airBrakes ? -1 : 1;
+            float throttle = motionControl.nomalizedAccelAmount;
+
             AdjustInputForMobileControls(ref roll, ref pitch, ref throttle);
 
             // Pass the input to the aeroplane
