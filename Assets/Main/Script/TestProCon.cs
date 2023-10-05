@@ -6,35 +6,15 @@ using UnityEngine.InputSystem;
 
 public class TestProCon : MonoBehaviour
 {
-    // Actionをインスペクターから編集できるようにする
-    [SerializeField] private InputAction _action;
-
     public static float Throttle { get; private set; }
 
-    // 有効化
-    private void OnEnable()
+    public void GetThrottleValue(InputAction.CallbackContext context)
     {
-        // InputActionを有効化
-        // これをしないと入力を受け取れないことに注意
-        _action?.Enable();
+        Throttle = context.ReadValue<float>();
     }
 
-    // 無効化
-    private void OnDisable()
+    void Update()
     {
-        // 自身が無効化されるタイミングなどで
-        // Actionを無効化する必要がある
-        _action?.Disable();
-    }
-
-    private void Update()
-    {
-        if (_action == null) return;
-
-        // Actionの入力値を読み込む
-        Throttle = _action.ReadValue<float>();
-
-        // 入力値をログ出力
-        Debug.Log($"Actionの入力値 : {Throttle}");
+        // Debug.Log(Throttle);
     }
 }

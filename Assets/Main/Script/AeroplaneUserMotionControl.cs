@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace UnityStandardAssets.Vehicles.Aeroplane
 {
@@ -11,6 +12,7 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
         // these max angles are only used on mobile, due to the way pitch and roll input are handled
         public float maxRollAngle = 80;
         public float maxPitchAngle = 80;
+        bool airBrakes = false;
 
         // reference to the aeroplane that we're controlling
         private AeroplaneController m_Aeroplane;
@@ -26,12 +28,13 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
             // Read input for the pitch, yaw, roll and throttle of the aeroplane.
             float roll = motionControl.nomalizedRollAngle;
             float pitch = motionControl.nomalizedPitchAngle;
-            bool airBrakes = motionControl.airBrakes;
+            float yaw = motionControl.nomalizedYawAngle;
+            // bool airBrakes = motionControl.airBrakes;
 
             // auto throttle up, or down if braking.
             // float throttle = airBrakes ? -1 : 1;
-            float throttle = motionControl.nomalizedAccelAmount;
-            // float throttle = TestProCon.Throttle;
+            // float throttle = -motionControl.nomalizedAccelAmount;
+            float throttle = TestProCon.Throttle;
 
             AdjustInputForMocopiControls(ref roll, ref pitch);
 
@@ -45,6 +48,20 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
             float targetRollAngle = -roll * maxRollAngle;
             float targetPitchAngle = pitch * maxPitchAngle;
             transform.localRotation = Quaternion.Euler(new Vector3(targetPitchAngle, transform.localEulerAngles.y, targetRollAngle));
+        }
+
+        public void AirBrakeButton(InputAction.CallbackContext context)
+        {
+            if (context.started)
+            {
+                airBrakes = true;
+                Debug.Log("AirBrakeButton+");
+            }
+            else if (context.canceled)
+            {
+                airBrakes = false;
+                Debug.Log("AirBrakeButton-");
+            }
         }
     }
 }

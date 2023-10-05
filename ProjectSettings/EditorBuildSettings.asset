@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Scene/Sea.unity
     guid: 8124e5870f4fd4c779e7a5f994e84ad1
+  - enabled: 1
+    path: Assets/Main/Scene/Space.unity
+    guid: 1bb5a718e0b0be541af1ca3addebdf8a
   m_configObjects: {}

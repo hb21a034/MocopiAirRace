@@ -52,7 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roll: {fileID: 8694437934728196574}
   pitch: {fileID: 7070908766381174691}
-  yaw: {fileID: 8241083989937475966}
+  yaw: {fileID: 0}
   accel: {fileID: 3029844532320898031}
   init: 0
   maxRollAngle: 80
@@ -1001,7 +1001,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refarance: {fileID: 9217110760311611957}
   target: {fileID: 4424178063465813388}
-  useAxis: 1
 --- !u!1 &4096275091979286525
 GameObject:
   m_ObjectHideFlags: 0
@@ -1125,7 +1124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5510043442460938251}
-  - component: {fileID: 8241083989937475966}
+  - component: {fileID: 2009095683106902641}
   m_Layer: 0
   m_Name: Yaw
   m_TagString: Untagged
@@ -1150,7 +1149,7 @@ Transform:
   - {fileID: 4270118917994982409}
   m_Father: {fileID: 8717072282091683843}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8241083989937475966
+--- !u!114 &2009095683106902641
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1159,13 +1158,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4436455154499353840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84ab813058da1d646b26ec7c393b80fd, type: 3}
+  m_Script: {fileID: 11500000, guid: bdaa1ba6cb9cb5e429627215302674d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getAngle1: {fileID: 4378758276825804541}
-  getAngle2: {fileID: 3810765951201502170}
-  invart: 0
-  debug: 0
+  refarance: {fileID: 7028410786616320769}
+  target: {fileID: 8439821221478285343}
 --- !u!1 &4539827449446026185
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,7 +1403,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refarance: {fileID: 9217110760311611957}
   target: {fileID: 2998956299457823340}
-  useAxis: 1
 --- !u!1 &6733945125466599734
 GameObject:
   m_ObjectHideFlags: 0
