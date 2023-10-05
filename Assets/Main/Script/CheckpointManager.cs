@@ -19,7 +19,10 @@ public class CheckpointManager : MonoBehaviour
     void Update()
     {
         // 次のチェックポイントをターゲットにする
-        targetIndicator.target = checkpointsObject[SetCheckpoint.PassedCheckpoint].transform;
+        if (SetCheckpoint.PassedCheckpoint < checkpointsObject.Length && targetIndicator != null)
+        {
+            targetIndicator.target = checkpointsObject[SetCheckpoint.PassedCheckpoint].transform;
+        }
     }
 
     private void OnDrawGizmos()
