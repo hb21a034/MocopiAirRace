@@ -89,6 +89,17 @@
                 },
                 {
                     "name": "",
+                    "id": "9b729f24-49ab-4803-a218-f13bf475fb25",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2a6ed2cf-0b5f-4c4a-b338-ca8f48bd8841",
                     "path": "<Gamepad>/dpad/down",
                     "interactions": "",
@@ -105,6 +116,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "ReturnToPreviousCheckpoint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e253a2b2-be8d-4aaa-9522-ddf36598c468",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "ReturnToPreviousCheckpoint",
                     "isComposite": false,
                     "isPartOfComposite": false

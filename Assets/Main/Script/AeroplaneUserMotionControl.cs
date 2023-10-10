@@ -33,8 +33,8 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
 
             // auto throttle up, or down if braking.
             // float throttle = airBrakes ? -1 : 1;
-            // float throttle = -motionControl.nomalizedAccelAmount;
-            float throttle = TestProCon.Throttle;
+            float throttle = motionControl.nomalizedAccelAmount;
+            // float throttle = TestProCon.Throttle;
 
             AdjustInputForMocopiControls(ref roll, ref pitch);
 

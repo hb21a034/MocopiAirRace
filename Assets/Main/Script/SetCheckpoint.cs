@@ -15,7 +15,7 @@ public class SetCheckpoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        PassedCheckpoint = 0;
     }
 
     // Update is called once per frame
