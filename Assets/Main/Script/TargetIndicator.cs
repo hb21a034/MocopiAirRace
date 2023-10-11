@@ -20,6 +20,17 @@ public class TargetIndicator : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (CheckpointManager.CheckPointList.Length <= SetCheckpoint.PassedCheckpoint)
+        {
+            target = null;
+            return;
+        }
+        else
+        {
+            target = CheckpointManager.CheckPointList[SetCheckpoint.PassedCheckpoint].transform;
+
+        }
+
         float canvasScale = transform.root.localScale.z;
         var center = 0.5f * new Vector3(Screen.width, Screen.height);
 

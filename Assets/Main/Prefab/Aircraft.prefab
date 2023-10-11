@@ -38112,7 +38112,6 @@ GameObject:
   - component: {fileID: 2693702651530492854}
   - component: {fileID: 5330375860236474703}
   - component: {fileID: 6800206977024453953}
-  - component: {fileID: 8336974702921163082}
   - component: {fileID: 1329108710372458686}
   m_Layer: 0
   m_Name: Aircraft
@@ -38192,60 +38191,6 @@ MonoBehaviour:
   m_AirBrakesEffect: 3
   m_ThrottleChangeSpeed: 0.3
   m_DragIncreaseFactor: 0.001
---- !u!114 &8336974702921163082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8111617506269351556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 923a2ee84c9e97d429c65882efb4f252, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meshColliderBuilderProperty:
-    splitProperty:
-      splitMaterialEnabled: 1
-      splitPrimitiveEnabled: 1
-      splitPolygonNormalEnabled: 0
-      splitPolygonNormalAngle: 45
-    reducerProperty:
-      shapeType: 2
-      fitType: 0
-      meshType: 3
-      maxTriangles: 255
-      sliceMode: 0
-      scale: {x: 1, y: 1, z: 1}
-      scaleElementType: 0
-      minThickness: {x: 0.01, y: 0.01, z: 0.01}
-      minThicknessElementType: 0
-      optimizeRotation:
-        x: 1
-        y: 1
-        z: 1
-      optimizeRotationElementType: 0
-      colliderToChild: 0
-      offset: {x: 0, y: 0, z: 0}
-      thicknessA: {x: 0, y: 0, z: 0}
-      thicknessB: {x: 0, y: 0, z: 0}
-      viewAdvanced: 0
-    colliderProperty:
-      convex: 1
-      isTrigger: 0
-      material: {fileID: 0}
-      isCreateAsset: 0
-    rigidbodyProperty:
-      mass: 1
-      drag: 0
-      angularDrag: 0.05
-      isKinematic: 1
-      useGravity: 0
-      interpolation: 0
-      collisionDetectionMode: 0
-      isCreate: 0
-      viewAdvanced: 0
-    modifyNameEnabled: 1
 --- !u!114 &1329108710372458686
 MonoBehaviour:
   m_ObjectHideFlags: 0
