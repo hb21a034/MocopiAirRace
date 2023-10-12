@@ -7,6 +7,7 @@ public class CheckpointManager : MonoBehaviour
 {
     [SerializeField] GameObject[] checkpointsObject;
     public static GameObject[] CheckPointList { get; private set; }
+    public static bool IsGoal { get; private set; } = false;
 
     void Awake()
     {
@@ -19,7 +20,10 @@ public class CheckpointManager : MonoBehaviour
 
     void Update()
     {
-
+        if (SetCheckpoint.PassedCheckpoint == checkpointsObject.Length)
+        {
+            IsGoal = true;
+        }
     }
 
     private void OnDrawGizmos()
