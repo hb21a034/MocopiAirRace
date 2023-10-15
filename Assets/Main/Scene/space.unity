@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.38358, g: 325.10843, b: 430.30963, a: 1}
+  m_IndirectSpecularColor: {r: 120.77322, g: 95.39064, b: 80.288956, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -303,7 +303,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: d5db7e55ea4eaea40b6784c185f0f27c, type: 2}
+  sharedProfile: {fileID: 11400000, guid: bcbd57a0e6b36414d869b99c6e328eaf, type: 2}
 --- !u!4 &8193405
 Transform:
   m_ObjectHideFlags: 0
@@ -3701,7 +3701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &156731941
 Transform:
   m_ObjectHideFlags: 0
@@ -6116,18 +6116,33 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2881835718502295100, guid: 0bf2cead988ec6140a3100f9d424b29e,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.0697
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881835718502295100, guid: 0bf2cead988ec6140a3100f9d424b29e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.0697
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881835718502295100, guid: 0bf2cead988ec6140a3100f9d424b29e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.0697
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881835718502295100, guid: 0bf2cead988ec6140a3100f9d424b29e,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 73
       objectReference: {fileID: 0}
     - target: {fileID: 2881835718502295100, guid: 0bf2cead988ec6140a3100f9d424b29e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 172.96
       objectReference: {fileID: 0}
     - target: {fileID: 2881835718502295100, guid: 0bf2cead988ec6140a3100f9d424b29e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 649
       objectReference: {fileID: 0}
     - target: {fileID: 2881835718502295100, guid: 0bf2cead988ec6140a3100f9d424b29e,
         type: 3}
@@ -6163,6 +6178,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881835718502295100, guid: 0bf2cead988ec6140a3100f9d424b29e,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7595921436224589610, guid: 0bf2cead988ec6140a3100f9d424b29e,
         type: 3}
@@ -37506,7 +37526,7 @@ PrefabInstance:
     - target: {fileID: 6800206977024453953, guid: 148b2e891e4e1e64f8097c3b9507bfef,
         type: 3}
       propertyPath: m_PitchEffect
-      value: 0.15
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6800206977024453953, guid: 148b2e891e4e1e64f8097c3b9507bfef,
         type: 3}
@@ -38328,6 +38348,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c01aca5e-24a4-49a4-892b-865fcb203289
     m_ActionName: Airplane/Brake[/XInputControllerWindows/dpad/left]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2002916122}
+        m_TargetAssemblyTypeName: SpeedControler, Assembly-CSharp
+        m_MethodName: AirBrakeButton
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bcf0b90a-5c60-4484-9e05-2b272eb1e490
+    m_ActionName: Airplane/Boost[/SwitchProControllerHID/leftTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Airplane
@@ -38931,7 +38967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb93c80c9553a494a83a5355b5ba50f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ipAddress: 192.168.1.14
+  ipAddress: 10.0.1.2
 --- !u!114 &1956121014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39494,8 +39530,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minSpeed: 30
-  maxSpeed: 200
-  accelerationPower: 25
+  maxSpeed: 300
+  boostSpeed: 600
+  boostPower: 100
+  accelerationPower: 50
   decay: 0.1
   dumper: 100
 --- !u!1 &2008211450
