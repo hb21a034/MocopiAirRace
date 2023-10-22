@@ -17,6 +17,7 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
         [SerializeField] AnimationCurve pitchCurve;
 
         // reference to the aeroplane that we're controlling
+        // private AeroplaneController m_Aeroplane;
         private AeroplaneController m_Aeroplane;
 
         private void Awake()

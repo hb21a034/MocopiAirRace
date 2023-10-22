@@ -24,11 +24,12 @@ public class GameTimer : MonoBehaviour
             if (RemainTime <= 0)
             {
                 TimerEnd();
+                ScoreManager.instance.GameEnd(0);
             }
             else if (CheckpointManager.IsGoal)
             {
                 TimerEnd();
-                ScoreManager.Score += (int)(RemainTime * 100);
+                ScoreManager.instance.GameEnd(RemainTime);
             }
         }
     }

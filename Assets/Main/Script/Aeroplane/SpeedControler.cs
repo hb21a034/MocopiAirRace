@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class SpeedControler : MonoBehaviour
 {
@@ -51,6 +52,7 @@ public class SpeedControler : MonoBehaviour
         if (context.started)
         {
             boost = true;
+            ScoreManager.BoostCount++;
             Debug.Log("boost");
         }
         else if (context.canceled)
