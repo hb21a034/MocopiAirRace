@@ -11,11 +11,13 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
 
         bool airBrakes = false;
         private FixedAeroplaneController m_Aeroplane;
+        public static GameObject Player { get; private set; }
 
         private void Awake()
         {
             // Set up the reference to the aeroplane controller.
             m_Aeroplane = GetComponent<FixedAeroplaneController>();
+            Player = this.gameObject;
         }
 
         private void FixedUpdate()
@@ -28,6 +30,7 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
 
             // float throttle = airBrakes ? -1 : 1;
             float throttle = motionControl.nomalizedAccelAmount;
+            SpeedControler.Throttle = throttle;
             // float throttle = TestProCon.Throttle;
 
             m_Aeroplane.Move(roll, pitch, 0, throttle, airBrakes);

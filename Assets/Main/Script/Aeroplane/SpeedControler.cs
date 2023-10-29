@@ -18,7 +18,7 @@ public class SpeedControler : MonoBehaviour
     float targetSpeed = 0.0f;
     bool boost = false;
 
-    public static float Throttle { get; private set; }
+    public static float Throttle { get; set; }
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +28,7 @@ public class SpeedControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Throttle = TestProCon.Throttle;
+        // Throttle = TestProCon.Throttle;
 
         if (boost)
         {
