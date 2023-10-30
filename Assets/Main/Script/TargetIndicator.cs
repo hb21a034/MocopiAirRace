@@ -20,6 +20,7 @@ public class TargetIndicator : MonoBehaviour
 
     private void LateUpdate()
     {
+        // ターゲットの座標を取得
         if (CheckpointManager.CheckPointList.Length <= SetCheckpoint.PassedCheckpoint)
         {
             target = null;

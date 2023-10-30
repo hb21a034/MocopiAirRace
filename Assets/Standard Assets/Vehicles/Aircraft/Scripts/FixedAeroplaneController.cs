@@ -7,6 +7,7 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
     public class FixedAeroplaneController : MonoBehaviour
     {
         [SerializeField] private float m_RollEffect = 1f;             // The strength of effect for roll input.
+        [SerializeField] private float rollBoost = 1f;
         [SerializeField] private float m_PitchEffect = 1f;            // The strength of effect for pitch input.
         [SerializeField] private float m_YawEffect = 0.2f;            // The strength of effect for yaw input.
         [SerializeField] private float m_BankedTurnEffect = 0.5f;     // The amount of turn from doing a banked turn.
@@ -23,6 +24,7 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
         public float PitchInput { get; private set; }
         public float YawInput { get; private set; }
         public float ThrottleInput { get; private set; }
+        public static bool IsBoost { get; set; }
 
         private float m_OriginalDrag;         // The drag when the scene starts.
         private float m_OriginalAngularDrag;  // The angular drag when the scene starts.
@@ -147,7 +149,7 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
             }
         }
 
-        private void CalculateTorque()
+        private void CalculateTorque() // 回転系の制御
         {
             // We accumulate torque forces into this variable:
             var torque = Vector3.zero;
@@ -156,7 +158,19 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
             // Add torque for the yaw based on the yaw input.
             torque += YawInput * m_YawEffect * transform.up;
             // Add torque for the roll based on the roll input.
-            torque += -RollInput * m_RollEffect * transform.forward;
+            // boost中のロール入力を強くする
+            if (IsBoost)
+            {
+                torque += -RollInput * m_RollEffect * transform.forward * rollBoost;
+                Debug.Log("rollBoost");
+            }
+            else
+            {
+                torque += -RollInput * m_RollEffect * transform.forward;
+                Debug.Log("roll");
+            }
+
+            // torque += -RollInput * m_RollEffect * transform.forward;
             // Add torque for banked turning.
             torque += m_BankedTurnAmount * m_BankedTurnEffect * transform.up;
             // The total torque is multiplied by the forward speed, so the controls have more effect at high speed,

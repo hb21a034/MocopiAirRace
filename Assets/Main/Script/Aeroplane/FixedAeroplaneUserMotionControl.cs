@@ -28,10 +28,10 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
             float yaw = motionControl.nomalizedYawAngle;
             // bool airBrakes = motionControl.airBrakes;
 
-            // float throttle = airBrakes ? -1 : 1;
-            float throttle = motionControl.nomalizedAccelAmount;
-            SpeedControler.Throttle = throttle;
+            float throttle = airBrakes ? -1 : 1;
+            // float throttle = motionControl.nomalizedAccelAmount;
             // float throttle = TestProCon.Throttle;
+            SpeedControler.Throttle = throttle;
 
             m_Aeroplane.Move(roll, pitch, 0, throttle, airBrakes);
         }

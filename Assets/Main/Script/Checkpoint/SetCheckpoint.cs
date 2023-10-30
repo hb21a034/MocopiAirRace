@@ -54,5 +54,6 @@ public class SetCheckpoint : MonoBehaviour
         float distance = Vector3.Distance(player.transform.position, this.transform.position);
         // 距離に応じてスコアを加算　後で調整
         ScoreManager.instance.OnPassedCheckpoint((int)(1000 - distance));
+        SpeedControler.RemainBoostCount++;
     }
 }

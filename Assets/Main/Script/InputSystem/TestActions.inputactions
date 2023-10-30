@@ -166,7 +166,7 @@
                     "name": "",
                     "id": "8bc0f02d-e4f9-4518-93dd-d39a9a604efe",
                     "path": "<Keyboard>/b",
-                    "interactions": "Press(behavior=2)",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Boost",

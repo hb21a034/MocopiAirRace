@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SocialPlatforms.Impl;
+using UnityStandardAssets.Vehicles.Aeroplane;
 
 public class SpeedControler : MonoBehaviour
 {
@@ -13,31 +13,37 @@ public class SpeedControler : MonoBehaviour
     [SerializeField] float accelerationPower = 0.0f; // 加速の強さ
     [SerializeField] float decay = 0.0f;             // 速度減衰の量
     [SerializeField] float dumper = 0.0f;            // ダンパー 入力の機敏さ
+    [SerializeField] float boostTime = 3.0f;         // ブーストの時間
     Rigidbody rb;
     float currentSpeed = 0.0f;
     float targetSpeed = 0.0f;
-    bool boost = false;
 
+    public static bool IsBoost { get; private set; } = false;
+    public static int RemainBoostCount { get; set; }
     public static float Throttle { get; set; }
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        RemainBoostCount = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Throttle = TestProCon.Throttle;
+        Throttle = TestProCon.Throttle;
+        FixedAeroplaneController.IsBoost = IsBoost;
 
-        if (boost)
+        if (IsBoost)
         {
-            targetSpeed = Mathf.Clamp(targetSpeed - decay + Throttle * accelerationPower * boostPower * Time.deltaTime, minSpeed, boostSpeed);
+            targetSpeed = Mathf.Clamp(targetSpeed + 1 * accelerationPower * boostPower * Time.deltaTime, minSpeed, boostSpeed);
+
         }
         else
         {
             // 目標速度を計算
             targetSpeed = Mathf.Clamp(targetSpeed - decay + Throttle * accelerationPower * Time.deltaTime, minSpeed, maxSpeed);
+
         }
 
         // 速度減衰
@@ -47,18 +53,22 @@ public class SpeedControler : MonoBehaviour
         rb.velocity = transform.forward * currentSpeed;
 
     }
-    public void AirBrakeButton(InputAction.CallbackContext context)
+    public void BoostButton(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.performed && 0 < RemainBoostCount && !IsBoost)
         {
-            boost = true;
+            IsBoost = true;
             ScoreManager.BoostCount++;
+            RemainBoostCount--;
             Debug.Log("boost");
+            StartCoroutine(BoostEnd());
         }
-        else if (context.canceled)
-        {
-            boost = false;
-            Debug.Log("boost off-");
-        }
+    }
+
+    // n秒後にboost解除
+    IEnumerator BoostEnd()
+    {
+        yield return new WaitForSeconds(boostTime);
+        IsBoost = false;
     }
 }

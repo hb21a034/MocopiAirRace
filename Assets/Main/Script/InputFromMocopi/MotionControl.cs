@@ -24,21 +24,21 @@ public class MotionControl : MonoBehaviour
     [Header("Pitch")]
     [SerializeField, Range(0f, 90f)] float maxPitchAngle = 80f;
     [SerializeField, Range(0f, -90f)] float minPitchAngle = -80f;
-    [SerializeField, Range(0f, 0.3f)] float pitchSmoothingFactor = 0.1f;
+    [SerializeField, Range(0f, 1f)] float pitchSmoothingFactor = 0.1f;
     public float pitchAngle = 0f;
     public float nomalizedPitchAngle = 0f;
 
     [Header("Yaw")]
     [SerializeField, Range(0f, 90f)] float maxYawAngle = 80f;
     [SerializeField, Range(0f, -90f)] float minYawAngle = -80f;
-    [SerializeField, Range(0f, 0.3f)] float yawSmoothingFactor = 0.1f;
+    [SerializeField, Range(0f, 1f)] float yawSmoothingFactor = 0.1f;
     public float yawAngle = 0f;
     public float nomalizedYawAngle = 0f;
 
     [Header("Accel")]
     [SerializeField, Range(0f, 90f)] float maxAccelAngle = 80f;
     [SerializeField, Range(0f, -90f)] float minAccelAngle = -80f;
-    [SerializeField, Range(0f, 0.3f)] float accelSmoothingFactor = 0.1f;
+    [SerializeField, Range(0f, 1f)] float accelSmoothingFactor = 0.1f;
     public float accelAmount = 0f;
     public float nomalizedAccelAmount = 0f;
 

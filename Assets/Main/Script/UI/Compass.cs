@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Vehicles.Aeroplane;
 
 public class Compass : MonoBehaviour
 {
     [SerializeField] float offset;
-    [SerializeField] GameObject player;
     Image image;
     // Start is called before the first frame update
     void Start()
@@ -17,6 +17,6 @@ public class Compass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        image.material.mainTextureOffset = new Vector2((player.transform.eulerAngles.y + offset) / 360, 0);
+        image.material.mainTextureOffset = new Vector2((FixedAeroplaneUserMotionControl.Player.transform.eulerAngles.y + offset) / 360, 0);
     }
 }
