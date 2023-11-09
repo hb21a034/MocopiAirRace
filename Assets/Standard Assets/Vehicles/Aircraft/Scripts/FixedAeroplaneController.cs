@@ -162,12 +162,12 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
             if (IsBoost)
             {
                 torque += -RollInput * m_RollEffect * transform.forward * rollBoost;
-                Debug.Log("rollBoost");
+                // Debug.Log("rollBoost");
             }
             else
             {
                 torque += -RollInput * m_RollEffect * transform.forward;
-                Debug.Log("roll");
+                // Debug.Log("roll");
             }
 
             // torque += -RollInput * m_RollEffect * transform.forward;

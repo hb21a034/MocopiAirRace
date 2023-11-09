@@ -17,6 +17,7 @@ public class Compass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        image.material.mainTextureOffset = new Vector2((FixedAeroplaneUserMotionControl.Player.transform.eulerAngles.y + offset) / 360, 0);
+        // image.material.mainTextureOffset = new Vector2((FixedAeroplaneUserMotionControl.Player.transform.eulerAngles.y + offset) / 360, 0);
+        image.material.mainTextureOffset = new Vector2(0, 0);
     }
 }
