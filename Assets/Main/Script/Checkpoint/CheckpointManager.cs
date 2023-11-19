@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class CheckpointManager : MonoBehaviour
 {
     [SerializeField] GameObject[] checkpointsObject;
     public static GameObject[] CheckPointList { get; private set; }
-    public static bool IsGoal { get; private set; } = false;
+    bool IsGoal = false;
+
+    public static UnityEvent OnGoal = new UnityEvent();
+
 
     void Awake()
     {
@@ -22,6 +26,10 @@ public class CheckpointManager : MonoBehaviour
     {
         if (SetCheckpoint.PassedCheckpoint == checkpointsObject.Length)
         {
+            if (!IsGoal)
+            {
+                OnGoal?.Invoke();
+            }
             IsGoal = true;
         }
     }

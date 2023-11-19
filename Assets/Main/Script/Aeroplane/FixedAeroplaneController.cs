@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace UnityStandardAssets.Vehicles.Aeroplane
 {
@@ -41,6 +42,9 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
             // Store original drag settings, these are modified during flight.
             m_OriginalDrag = m_Rigidbody.drag;
             m_OriginalAngularDrag = m_Rigidbody.angularDrag;
+            Reset();
+
+            CheckpointManager.OnGoal.AddListener(Immobilize);
 
             for (int i = 0; i < transform.childCount; i++)
             {
@@ -54,6 +58,8 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
 
         public void Move(float rollInput, float pitchInput, float yawInput, float throttleInput, bool airBrakes)
         {
+            if (m_Immobilized) return;
+
             // transfer input parameters into properties.s
             RollInput = rollInput;
             PitchInput = pitchInput;

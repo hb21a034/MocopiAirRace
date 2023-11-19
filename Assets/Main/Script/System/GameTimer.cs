@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameTimer : MonoBehaviour
 {
@@ -9,10 +10,14 @@ public class GameTimer : MonoBehaviour
     bool isWorking = false;
     float startTime;
     public static float RemainTime { get; private set; }
+
+    ScoreManager scoreManager;
     // Start is called before the first frame update
     void Start()
     {
         TimerStart();
+        CheckpointManager.OnGoal.AddListener(TimerEnd);
+        scoreManager = GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -24,12 +29,6 @@ public class GameTimer : MonoBehaviour
             if (RemainTime <= 0)
             {
                 TimerEnd();
-                ScoreManager.instance.GameEnd(0);
-            }
-            else if (CheckpointManager.IsGoal)
-            {
-                TimerEnd();
-                ScoreManager.instance.GameEnd(RemainTime);
             }
         }
     }
@@ -42,5 +41,6 @@ public class GameTimer : MonoBehaviour
     void TimerEnd()
     {
         isWorking = false;
+        scoreManager.GameEnd(RemainTime);
     }
 }

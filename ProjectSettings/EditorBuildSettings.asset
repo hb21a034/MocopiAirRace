@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Main/Scene/Test/space.unity
     guid: 1bb5a718e0b0be541af1ca3addebdf8a
   - enabled: 1
+    path: Assets/Main/Scene/Test/Result.unity
+    guid: ba126514ac6baf04f97dd988c565ef93
+  - enabled: 1
     path: Assets/Main/Scene/1_Title.unity
     guid: ff7d36686d9a0544b836f888cb86ec33
   - enabled: 1
@@ -19,7 +22,7 @@ EditorBuildSettings:
     guid: 425626ff5cedf0a429a1794139164f21
   - enabled: 1
     path: Assets/Main/Scene/3_Stage1.unity
-    guid: 6c94de1a13f240a40b1ae0d661c62037
+    guid: 8598cb66a71524342b900b52b61f5c24
   - enabled: 1
     path: Assets/Main/Scene/3_Stage2.unity
     guid: 94dbc65bd66eb4342b261493a8805642

@@ -934,7 +934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage1:
-    m_SceneName: 3_Stage1
+    m_SceneName: Result
   stage2:
     m_SceneName: 3_Stage2
   stage3:
