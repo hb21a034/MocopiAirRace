@@ -31,7 +31,7 @@ public class SpeedControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Throttle = TestProCon.Throttle;
+        // Throttle = TestProCon.Throttle;
         FixedAeroplaneController.IsBoost = IsBoost;
 
         if (IsBoost)
