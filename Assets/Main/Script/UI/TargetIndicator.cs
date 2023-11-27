@@ -6,6 +6,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(RectTransform))]
 public class TargetIndicator : MonoBehaviour
 {
+    [SerializeField]
+    int targetNumber = 0;
     public Transform target = default;
     [SerializeField] private Image arrow = default;
 
@@ -21,15 +23,16 @@ public class TargetIndicator : MonoBehaviour
     private void LateUpdate()
     {
         // ターゲットの座標を取得
-        if (CheckpointManager.CheckPointList.Length <= SetCheckpoint.PassedCheckpoint)
+        if (CheckpointManager.CheckPointList.Length <= SetCheckpoint.PassedCheckpoint + targetNumber)
         {
+            // これ以上ターゲットがない場合は非表示にする
             target = null;
+            arrow.enabled = false;
             return;
         }
         else
         {
-            target = CheckpointManager.CheckPointList[SetCheckpoint.PassedCheckpoint].transform;
-
+            target = CheckpointManager.CheckPointList[SetCheckpoint.PassedCheckpoint + targetNumber].transform;
         }
 
         float canvasScale = transform.root.localScale.z;

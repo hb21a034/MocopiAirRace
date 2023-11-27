@@ -58,6 +58,7 @@ MonoBehaviour:
   myText: {fileID: 4499484858201644903}
   showNumber: 1
   score: 0
+  baseScore: 640000003200000014000000
 --- !u!114 &2572697136819048933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +242,7 @@ GameObject:
   - component: {fileID: 3853561245290723140}
   - component: {fileID: 2914456990984337697}
   - component: {fileID: 9012017183620775120}
+  - component: {fileID: 7292931535206661995}
   m_Layer: 0
   m_Name: OuterCore
   m_TagString: Untagged
@@ -346,6 +348,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df29fc2f14470f4aaf5b66b7c0af564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7292931535206661995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2690549528184727499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a061546c732557c42909efa1ff4f4896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultColor: {r: 0, g: 3.479924, b: 16.7814, a: 0.69411767}
+  nextColor: {r: 16.7814, g: 1.1421896, b: 0, a: 0.69411767}
 --- !u!1 &3669078706685594789
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +375,7 @@ GameObject:
   - component: {fileID: 8289389774316938313}
   - component: {fileID: 8386862384618050830}
   - component: {fileID: 156024588823788393}
+  - component: {fileID: 5116431988419151882}
   m_Layer: 0
   m_Name: Mantle
   m_TagString: Untagged
@@ -464,6 +481,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df29fc2f14470f4aaf5b66b7c0af564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5116431988419151882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3669078706685594789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a061546c732557c42909efa1ff4f4896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultColor: {r: 0, g: 3.479924, b: 16.7814, a: 0.69411767}
+  nextColor: {r: 16.7814, g: 1.1421896, b: 0, a: 0.69411767}
 --- !u!1 &4826921189548809520
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,6 +508,7 @@ GameObject:
   - component: {fileID: 1999825324529925292}
   - component: {fileID: 3123033787841852410}
   - component: {fileID: 7273910220827673632}
+  - component: {fileID: 6332148449438899655}
   m_Layer: 0
   m_Name: InnerCore
   m_TagString: Untagged
@@ -582,3 +614,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df29fc2f14470f4aaf5b66b7c0af564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6332148449438899655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4826921189548809520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a061546c732557c42909efa1ff4f4896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultColor: {r: 0, g: 3.479924, b: 16.7814, a: 0.69411767}
+  nextColor: {r: 16.7814, g: 1.1421896, b: 0, a: 0.69411767}

@@ -44,7 +44,7 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
             m_OriginalAngularDrag = m_Rigidbody.angularDrag;
             Reset();
 
-            CheckpointManager.OnGoal.AddListener(Immobilize);
+            // CheckpointManager.OnGoal.AddListener(Immobilize);
 
             for (int i = 0; i < transform.childCount; i++)
             {

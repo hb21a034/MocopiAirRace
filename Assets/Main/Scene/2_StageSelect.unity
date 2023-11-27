@@ -936,9 +936,9 @@ MonoBehaviour:
   stage1:
     m_SceneName: Result
   stage2:
-    m_SceneName: 3_Stage2
+    m_SceneName: Result
   stage3:
-    m_SceneName: 3_Stage3
+    m_SceneName: Result
   setting:
     m_SceneName: 4_Setting
   credit:
