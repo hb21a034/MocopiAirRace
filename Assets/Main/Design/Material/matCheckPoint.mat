@@ -10,7 +10,7 @@ Material:
   m_Name: matCheckPoint
   m_Shader: {fileID: -6465566751694194690, guid: 0143786d36b027548ba3c0644251ad71,
     type: 3}
-  m_Parent: {fileID: 2100000, guid: 7eb3ca1ee5c7394419ca2b25acf25a20, type: 2}
+  m_Parent: {fileID: 2100000, guid: 78cf069b909d5fb44925fc964681b8d6, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _DISABLE_SSR_TRANSPARENT

@@ -934,11 +934,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage1:
-    m_SceneName: Result
+    m_SceneName: Test_Stage1
   stage2:
-    m_SceneName: Result
+    m_SceneName: Test_Stage2
   stage3:
-    m_SceneName: Result
+    m_SceneName: Test_Stage3
   setting:
     m_SceneName: 4_Setting
   credit:

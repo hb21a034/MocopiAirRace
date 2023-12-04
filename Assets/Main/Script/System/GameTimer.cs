@@ -15,7 +15,7 @@ public class GameTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TimerStart();
+        CountdownController.OnStart.AddListener(TimerStart);
         CheckpointManager.OnGoal.AddListener(TimerEnd);
         scoreManager = GetComponent<ScoreManager>();
     }

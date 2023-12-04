@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityStandardAssets.Vehicles.Aeroplane;
 
@@ -21,6 +22,13 @@ public class SpeedControler : MonoBehaviour
     public static bool IsBoost { get; private set; } = false;
     public static int RemainBoostCount { get; set; }
     public static float Throttle { get; set; }
+    public static UnityEvent OnBoost = new UnityEvent();
+    public static UnityEvent OnBoostEnd = new UnityEvent();
+    public static UnityEvent OnDelay = new UnityEvent();
+    public static UnityEvent OnDelayEnd = new UnityEvent();
+
+    Coroutine oldBoostEnd;
+    bool isSpeedLimit = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,20 +63,58 @@ public class SpeedControler : MonoBehaviour
     }
     public void BoostButton(InputAction.CallbackContext context)
     {
-        if (context.performed && 0 < RemainBoostCount && !IsBoost)
+        if (context.performed && 0 < RemainBoostCount && !IsBoost && !isSpeedLimit)
         {
-            IsBoost = true;
-            ScoreManager.BoostCount++;
+            Boost();
             RemainBoostCount--;
-            Debug.Log("boost");
-            StartCoroutine(BoostEnd());
         }
+    }
+
+    public void Boost()
+    {
+        IsBoost = true;
+        OnBoost?.Invoke();
+        ScoreManager.BoostCount++;
+        Debug.Log("boost");
+
+        // ブースト中なら以前のコルーチンを再起動
+        if (oldBoostEnd != null)
+        {
+            StopCoroutine(oldBoostEnd);
+        }
+        oldBoostEnd = StartCoroutine(BoostEnd());
+
     }
 
     // n秒後にboost解除
     IEnumerator BoostEnd()
     {
         yield return new WaitForSeconds(boostTime);
+        OnBoostEnd?.Invoke();
         IsBoost = false;
+    }
+
+    // DelayZoneに入ったら速度制限
+    float defaultMaxSpeed;
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("DelayZone"))
+        {
+            isSpeedLimit = true;
+            defaultMaxSpeed = maxSpeed;
+            maxSpeed = minSpeed;
+            OnDelay?.Invoke();
+        }
+    }
+
+    // DelayZoneから出たら速度制限解除
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("DelayZone"))
+        {
+            isSpeedLimit = false;
+            maxSpeed = defaultMaxSpeed;
+            OnDelayEnd?.Invoke();
+        }
     }
 }
