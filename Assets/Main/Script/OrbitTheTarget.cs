@@ -21,17 +21,25 @@ public class OrbitTheTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isWorking) { Orbit(); }
+        if (isWorking)
+        {
+            transform.parent = target;
+            Orbit();
+        }
     }
 
     void Orbit()
     {
         time += Time.deltaTime;
-        // ターゲットの周囲をdistanceの距離を保ちながらspeedの速さで周回する
-        transform.position = target.position
-                                + new Vector3(math.cos(time * speed) * distance,
-                                              height,
-                                              math.sin(time * speed) * distance);
+        // ターゲットの周囲をdistanceの距離を保ちながらspeedの速さで周回する　座標はターゲットを基準としたローカル座標
+        transform.localPosition = new Vector3(math.cos(time * speed) * distance,
+                                               height,
+                                               math.sin(time * speed) * distance);
+
+        // transform.position = target.position
+        //                         + new Vector3(math.cos(time * speed) * distance,
+        //                                       height,
+        //                                       math.sin(time * speed) * distance);
 
         // ターゲットの方向を向く
         transform.LookAt(target);

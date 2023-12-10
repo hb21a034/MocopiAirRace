@@ -15,6 +15,7 @@ public class SpeedControler : MonoBehaviour
     [SerializeField] float decay = 0.0f;             // 速度減衰の量
     [SerializeField] float dumper = 0.0f;            // ダンパー 入力の機敏さ
     [SerializeField] float boostTime = 3.0f;         // ブーストの時間
+    [SerializeField] float delaySpeed = 60f;        // DelayZoneに入った時の速度
     Rigidbody rb;
     float currentSpeed = 0.0f;
     float targetSpeed = 0.0f;
@@ -28,7 +29,6 @@ public class SpeedControler : MonoBehaviour
     public static UnityEvent OnDelayEnd = new UnityEvent();
 
     Coroutine oldBoostEnd;
-    bool isSpeedLimit = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,7 +63,7 @@ public class SpeedControler : MonoBehaviour
     }
     public void BoostButton(InputAction.CallbackContext context)
     {
-        if (context.performed && 0 < RemainBoostCount && !IsBoost && !isSpeedLimit)
+        if (context.performed && 0 < RemainBoostCount && !IsBoost)
         {
             Boost();
             RemainBoostCount--;
@@ -81,6 +81,7 @@ public class SpeedControler : MonoBehaviour
         if (oldBoostEnd != null)
         {
             StopCoroutine(oldBoostEnd);
+            OnBoostEnd?.Invoke();
         }
         oldBoostEnd = StartCoroutine(BoostEnd());
 
@@ -100,9 +101,8 @@ public class SpeedControler : MonoBehaviour
     {
         if (other.CompareTag("DelayZone"))
         {
-            isSpeedLimit = true;
             defaultMaxSpeed = maxSpeed;
-            maxSpeed = minSpeed;
+            maxSpeed = delaySpeed;
             OnDelay?.Invoke();
         }
     }
@@ -112,7 +112,6 @@ public class SpeedControler : MonoBehaviour
     {
         if (other.CompareTag("DelayZone"))
         {
-            isSpeedLimit = false;
             maxSpeed = defaultMaxSpeed;
             OnDelayEnd?.Invoke();
         }

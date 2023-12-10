@@ -1,5 +1,5 @@
 {
-    "name": "TestActions",
+    "name": "Aircraftctions",
     "maps": [
         {
             "name": "Airplane",
@@ -15,15 +15,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Restart",
-                    "type": "Button",
-                    "id": "e992dda4-0f92-4390-8ef5-5adb9583479e",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Brake",
                     "type": "Button",
                     "id": "c01aca5e-24a4-49a4-892b-865fcb203289",
@@ -36,6 +27,15 @@
                     "name": "Boost",
                     "type": "Button",
                     "id": "bcf0b90a-5c60-4484-9e05-2b272eb1e490",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "73df0bf4-692c-462e-a76a-160e88683e78",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -150,6 +150,39 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Boost",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "11bbcf1e-7676-40fa-9478-fb96575adc23",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1cf0a1c3-fc96-479c-a7d6-c9819056520f",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f50036f4-4f54-4a20-aa53-801a213a44dc",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

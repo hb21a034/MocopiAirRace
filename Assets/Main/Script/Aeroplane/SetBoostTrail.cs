@@ -15,6 +15,7 @@ public class SetBoostTrail : MonoBehaviour
     {
         SpeedControler.OnBoost.AddListener(InstanciateBoostTrail);
         SpeedControler.OnBoostEnd.AddListener(DestroyBoostTrail);
+        CheckpointManager.OnGoal.AddListener(InstanciateBoostTrail);
     }
 
     void InstanciateBoostTrail()

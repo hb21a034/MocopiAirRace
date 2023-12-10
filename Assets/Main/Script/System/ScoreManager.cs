@@ -56,7 +56,7 @@ public class ScoreManager : MonoBehaviour
         float[] timeData = new float[3];
         timeData[0] = RemainingTime;
         timeData[1] = baseScore[0];
-        timeData[2] = remainingTime * baseScore[0];
+        timeData[2] = timeData[0] * timeData[1];
         ScoreDatabase[0] = timeData;
 
         // ブースト
