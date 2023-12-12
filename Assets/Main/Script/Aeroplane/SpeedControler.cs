@@ -34,6 +34,7 @@ public class SpeedControler : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         RemainBoostCount = 1;
+        IsBoost = false;
     }
 
     // Update is called once per frame

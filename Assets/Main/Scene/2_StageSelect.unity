@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.38358, g: 325.10843, b: 430.30963, a: 1}
+  m_IndirectSpecularColor: {r: 262.05447, g: 324.66898, b: 429.71786, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -934,11 +934,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage1:
-    m_SceneName: Test_Stage1
+    m_SceneName: 3_Stage1
   stage2:
-    m_SceneName: Test_Stage2
+    m_SceneName: 3_Stage2
   stage3:
-    m_SceneName: Test_Stage3
+    m_SceneName: 3_Stage3
   setting:
     m_SceneName: 4_Setting
   credit:

@@ -11,9 +11,11 @@ public class PauseButtonManager : MonoBehaviour
     void Start()
     {
         pauseGame = GameObject.Find("GameManager").GetComponent<PauseGame>();
+        // this.enabled = false;
     }
     public void MenuButton()
     {
+        pauseGame.TogglePause();
         SceneManager.LoadScene("2_StageSelect");
     }
 
