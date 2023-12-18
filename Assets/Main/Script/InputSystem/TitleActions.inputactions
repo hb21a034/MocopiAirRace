@@ -37,6 +37,17 @@
                     "action": "PressStart",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "08ec718a-ab2b-482c-bce4-337633c02ed6",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "PressStart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

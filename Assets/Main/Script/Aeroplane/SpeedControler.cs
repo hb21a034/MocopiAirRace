@@ -94,6 +94,7 @@ public class SpeedControler : MonoBehaviour
         yield return new WaitForSeconds(boostTime);
         OnBoostEnd?.Invoke();
         IsBoost = false;
+        oldBoostEnd = null;
     }
 
     // DelayZoneに入ったら速度制限

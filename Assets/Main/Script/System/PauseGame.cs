@@ -48,7 +48,7 @@ public class PauseGame : MonoBehaviour
 
     void Destroy()
     {
-        Destroy(this.gameObject);
+        Destroy(pauseUI);
         Debug.Log("destroy");
     }
 }

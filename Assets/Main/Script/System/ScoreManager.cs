@@ -50,6 +50,7 @@ public class ScoreManager : MonoBehaviour
     }
 
     // すべてのスコアを計算しデータベースに登録
+    // 生データ,基礎点,合計点
     void ScoreCalc()
     {
         // タイム

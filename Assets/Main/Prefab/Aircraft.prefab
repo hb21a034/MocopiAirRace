@@ -1021,6 +1021,7 @@ MonoBehaviour:
   decay: 0.1
   dumper: 100
   boostTime: 3
+  delaySpeed: 60
 --- !u!114 &6925642347626736718
 MonoBehaviour:
   m_ObjectHideFlags: 0

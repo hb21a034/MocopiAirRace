@@ -17,7 +17,7 @@ public class RankViewer : MonoBehaviour
         int[] nowRanking = RankSystem.LoadRanking();
         for (int i = 0; i < 5; i++)
         {
-            RankingText[i].text = nowRanking[i].ToString();
+            RankingText[i].text = nowRanking[i].ToString("N0");
         }
     }
 }

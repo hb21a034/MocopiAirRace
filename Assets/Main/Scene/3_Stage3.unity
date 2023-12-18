@@ -4921,10 +4921,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1577083394571437003, guid: 8dc4d88d997923147947e1c1fed2a414,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5618934536310582809, guid: 8dc4d88d997923147947e1c1fed2a414,
         type: 3}
       propertyPath: m_Name
       value: StageBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 5793094251472784910, guid: 8dc4d88d997923147947e1c1fed2a414,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7153825623653432903, guid: 8dc4d88d997923147947e1c1fed2a414,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8555550498721519018, guid: 8dc4d88d997923147947e1c1fed2a414,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

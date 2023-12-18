@@ -30,5 +30,9 @@ public class SetBoostTrail : MonoBehaviour
     {
         Destroy(tmpBoostTrailL);
         Destroy(tmpBoostTrailR);
+        tmpBoostTrailL = null;
+        tmpBoostTrailR = null;
+
+        Debug.Log("destroy BoostTrail");
     }
 }
