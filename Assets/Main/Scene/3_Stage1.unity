@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.020983273, g: 0.03872548, b: 0.08664831, a: 1}
+  m_IndirectSpecularColor: {r: 0.021014776, g: 0.038784984, b: 0.08684675, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2194,6 +2194,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 517721989267501267, guid: 8dc4d88d997923147947e1c1fed2a414,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 517721989267501267, guid: 8dc4d88d997923147947e1c1fed2a414,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 350
+      objectReference: {fileID: 0}
     - target: {fileID: 883229656548478002, guid: 8dc4d88d997923147947e1c1fed2a414,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2243,6 +2253,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483313102677783957, guid: 8dc4d88d997923147947e1c1fed2a414,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -3.3475597e-11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483313102677783957, guid: 8dc4d88d997923147947e1c1fed2a414,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 2.9601165e-12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611660353336804052, guid: 8dc4d88d997923147947e1c1fed2a414,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -3.3475597e-11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611660353336804052, guid: 8dc4d88d997923147947e1c1fed2a414,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 2.9601165e-12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977927119575957318, guid: 8dc4d88d997923147947e1c1fed2a414,
+        type: 3}
+      propertyPath: stage
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5618934536310582809, guid: 8dc4d88d997923147947e1c1fed2a414,
         type: 3}
