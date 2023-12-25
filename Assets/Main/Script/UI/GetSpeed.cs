@@ -21,6 +21,15 @@ public class GetSpeed : MonoBehaviour
     void Update()
     {
         float speed = rb.velocity.magnitude;
-        textmeshPro.text = speed.ToString("F0");
+        if (speed < 100)
+        {
+            string speedTxt = "0" + speed.ToString("F0");
+            textmeshPro.text = speedTxt;
+        }
+        else
+        {
+            textmeshPro.text = speed.ToString("F0");
+        }
+
     }
 }

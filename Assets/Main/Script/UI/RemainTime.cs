@@ -15,13 +15,24 @@ public class RemainTime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameTimer.RemainTime < 0)
+        float time = GameTimer.RemainTime;
+        if (time <= 0)
         {
-            textmeshPro.text = "Time Up";
+            textmeshPro.text = "000";
+        }
+        else if (time < 10)
+        {
+            string timetext = "00" + time.ToString("F0");
+            textmeshPro.text = timetext;
+        }
+        else if (time < 100)
+        {
+            string timetext = "0" + time.ToString("F0");
+            textmeshPro.text = timetext;
         }
         else
         {
-            textmeshPro.text = GameTimer.RemainTime.ToString("F1");
+            textmeshPro.text = time.ToString("F0");
         }
     }
 }
