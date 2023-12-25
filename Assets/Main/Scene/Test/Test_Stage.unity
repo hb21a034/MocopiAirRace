@@ -2247,22 +2247,27 @@ PrefabInstance:
     - target: {fileID: 3483313102677783957, guid: 8dc4d88d997923147947e1c1fed2a414,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 3.3475594e-11
+      value: -3.3475597e-11
       objectReference: {fileID: 0}
     - target: {fileID: 3483313102677783957, guid: 8dc4d88d997923147947e1c1fed2a414,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -2.9601165e-12
+      value: 2.9601165e-12
       objectReference: {fileID: 0}
     - target: {fileID: 3611660353336804052, guid: 8dc4d88d997923147947e1c1fed2a414,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 3.3475594e-11
+      value: -3.3475597e-11
       objectReference: {fileID: 0}
     - target: {fileID: 3611660353336804052, guid: 8dc4d88d997923147947e1c1fed2a414,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -2.9601165e-12
+      value: 2.9601165e-12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3968769585722987178, guid: 8dc4d88d997923147947e1c1fed2a414,
+        type: 3}
+      propertyPath: m_Name
+      value: TrailRoot
       objectReference: {fileID: 0}
     - target: {fileID: 4977927119575957318, guid: 8dc4d88d997923147947e1c1fed2a414,
         type: 3}
