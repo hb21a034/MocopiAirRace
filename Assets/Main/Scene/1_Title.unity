@@ -348,7 +348,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PRESS START
+  m_text: PRESS ANY KEY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bf8f2ee108fdccc478edc347df0ce450, type: 2}
   m_sharedMaterial: {fileID: 1813070721926829174, guid: bf8f2ee108fdccc478edc347df0ce450,
